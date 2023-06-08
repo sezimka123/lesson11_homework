@@ -37,8 +37,9 @@ task2() {
   int random = Random().nextInt(100);
   print("Computer's choice is $random");
   while (random != middle) {
-    middle = (min + max) ~/ 2;
     count++;
+    middle = (min + max) ~/ 2;
+    
     if (random < middle) {
       max = middle;
     } else if (random > middle) {
@@ -77,6 +78,8 @@ task3() {
 
     int min = 0;
     int max = 100;
+    int minBinary = 0;
+    int maxBinary = 100;
 
     int countRandom = 0;
     int randomGuess = 0;
@@ -96,12 +99,12 @@ task3() {
     countAmountRandom += countRandom;
 
     while (numberFromArray != middle) {
-      middle = (min + max) ~/ 2;
+      middle = (minBinary + maxBinary) ~/ 2;
       countBinary++;
       if (numberFromArray < middle) {
-      max = middle;
+      maxBinary = middle;
     } else if (numberFromArray > middle) {
-      min = middle;
+      minBinary = middle;
     }
     }
     countAmountBinary += countBinary;
